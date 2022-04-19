@@ -8,20 +8,15 @@ public class Name {
 
     private final String value;
 
-    public Name(String value) {
+    private Name(String value) {
         if (value.length() < 1 || value.length() > 5) {
             throw new IllegalArgumentException(NAME_LENGTH_EXCEPTION_MESSAGE);
         }
         this.value = value;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return value;
+    public static Name from(String name) {
+        return new Name(name);
     }
 
     @Override

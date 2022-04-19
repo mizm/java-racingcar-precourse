@@ -5,7 +5,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.junit.jupiter.api.Assertions.*;
 
 class NameTest {
 
@@ -14,7 +13,7 @@ class NameTest {
     @ValueSource(strings = {"abcdef", ""})
     void nameTest(String input) {
         assertThatIllegalArgumentException().isThrownBy(() -> {
-            new Name(input);
+            Name.from(input);
         });
     }
 }
