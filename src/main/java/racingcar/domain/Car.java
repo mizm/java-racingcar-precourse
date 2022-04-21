@@ -35,6 +35,14 @@ public class Car implements Comparable<Car> {
         return from(name, now);
     }
 
+    public Name getName() {
+        return name;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
