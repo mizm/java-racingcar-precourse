@@ -35,6 +35,10 @@ public class Names {
         return cars;
     }
 
+    public List<Name> getNames() {
+        return names;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

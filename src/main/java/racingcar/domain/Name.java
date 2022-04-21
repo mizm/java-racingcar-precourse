@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.util.ExceptionMessageUtil;
+
 import java.util.Objects;
 
 public class Name {
@@ -10,7 +12,7 @@ public class Name {
 
     private Name(String value) {
         if (value.length() < 1 || value.length() > 5) {
-            throw new IllegalArgumentException(NAME_LENGTH_EXCEPTION_MESSAGE);
+            throw new IllegalArgumentException(ExceptionMessageUtil.errorMessage(NAME_LENGTH_EXCEPTION_MESSAGE));
         }
         this.value = value;
     }

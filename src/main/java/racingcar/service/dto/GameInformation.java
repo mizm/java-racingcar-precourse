@@ -1,5 +1,6 @@
 package racingcar.service.dto;
 
+import racingcar.controller.dto.UserInput;
 import racingcar.domain.Names;
 
 public class GameInformation {
@@ -12,12 +13,11 @@ public class GameInformation {
         this.time = time;
     }
 
-//    public static GameInformation from(UserInput userInput) {
-//        Names names = new Names();
-//        names.addNames(userInput.getNames());
-//        Integer time = Integer.parseInt(userInput.getTimeStr());
-//        return new GameInformation(names, time);
-//    }
+    public static GameInformation from(UserInput userInput) {
+        Names names = Names.from(userInput.getNames());
+        Integer time = Integer.parseInt(userInput.getTimeStr());
+        return new GameInformation(names, time);
+    }
 
     public static GameInformation from(String namesStr, Integer time) {
         Names names = Names.from(namesStr);

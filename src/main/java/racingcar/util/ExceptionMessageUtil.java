@@ -1,6 +1,6 @@
 package racingcar.util;
 
-public class ErrorMessageUtil {
+public class ExceptionMessageUtil {
 
     private static final String ERROR_MESSAGE_FORMAT = "[ERROR] %s";
 
