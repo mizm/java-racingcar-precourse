@@ -51,6 +51,7 @@ public class Cars {
         for (Car car : cars) {
             winner = carWithHigherPosition(winner, car);
         }
+        return winner;
     }
 
     private Car carWithHigherPosition(Car winner, Car car) {
