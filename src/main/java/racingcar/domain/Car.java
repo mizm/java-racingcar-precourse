@@ -48,10 +48,6 @@ public class Car implements Comparable<Car> {
         return Objects.hash(name, position);
     }
 
-    public String toStringNameAndPosition() {
-        return name.toString() + " : " + position.toString();
-    }
-
     @Override
     public int compareTo(Car o) {
         return this.position.compareTo(o.position);

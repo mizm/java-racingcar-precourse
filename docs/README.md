@@ -15,3 +15,17 @@
         - 랜덤 값을 통해 갈 수 있는지 없는지 판별하는 메서드 test 구현
 - NumberGenerator 구현
     - RandomNumberGenerator 구현
+- Cars 구현
+    - move() 함수 호출 시 내부에 car의 moveOrStop() 함수 호출 후 Cars 반환
+    - print() 함수 호출 시 각 자동차의 위치 프린트
+- Game 구현
+    - GameInformation를 통해 Game 생성
+    - Game 생성 시 RuleDto validation
+    - Game 전체 실행 메서드 구현
+    - 1초 메서드 step() 구현
+- Winner 구현
+    - toString() 호출 시 List<Name> 을 "," 로 join해서 반환
+- GameHistory 구현
+    - save(time, Cars) 게임 진행 내역 저장
+    - getHistory(time) 을 통해 내역을 제공한다.
+    - isValid(time) 히스토리가 없으면 illegegalArgument Expception 발생
