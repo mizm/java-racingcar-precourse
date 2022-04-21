@@ -12,7 +12,7 @@ public class Winners {
         this.winners = winners;
     }
 
-    public static Winners create(Names names) {
+    public static Winners from(Names names) {
         return new Winners(names);
     }
 

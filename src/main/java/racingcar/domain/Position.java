@@ -25,7 +25,7 @@ public class Position implements Comparable<Position> {
         return new Position(this.position + STEP);
     }
 
-    public Integer getNow() {
+    public Integer getPosition() {
         return position;
     }
 
