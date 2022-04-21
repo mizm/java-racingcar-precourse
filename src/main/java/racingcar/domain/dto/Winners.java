@@ -1,7 +1,10 @@
 package racingcar.domain.dto;
 
+import racingcar.domain.Name;
 import racingcar.domain.Names;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Winners {
@@ -16,8 +19,13 @@ public class Winners {
         return new Winners(names);
     }
 
-    public Names getWinners() {
-        return winners;
+    public String getWinnersString() {
+        List<Name> names = winners.getNames();
+        List<String> namesStr = new ArrayList<>();
+        for (Name name : names) {
+            namesStr.add(name.getValue());
+        }
+        return String.join(",", namesStr);
     }
 
     @Override
