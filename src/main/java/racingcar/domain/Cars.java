@@ -18,6 +18,10 @@ public class Cars {
         return new Cars(cars);
     }
 
+    public static Cars from(Names names) {
+        return new Cars(names.defaultPositionCars());
+    }
+
     public Cars move(MoveStrategy moveStrategy) {
         List<Car> moveCars = cars.stream().map(car -> car.moveOrStop(moveStrategy))
                 .collect(Collectors.toList());
