@@ -29,3 +29,12 @@
     - save(time, Cars) 게임 진행 내역 저장
     - getHistory(time) 을 통해 내역을 제공한다.
     - isValid(time) 히스토리가 없으면 illegegalArgument Expception 발생
+- Input view 구현
+    - Input 받기
+    - Input 받은 값 전달 객체(Rule) 생성 후 return
+- UserInput 구현
+    - 받은 값 validation
+- GameInformation 구현
+    - create(String namesStr, Long time) 정적 팩토리 메서드 구현
+    - getNames() 구현
+    - getTime() 구현
