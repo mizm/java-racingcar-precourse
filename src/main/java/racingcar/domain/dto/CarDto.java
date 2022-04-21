@@ -8,23 +8,23 @@ import java.util.Objects;
 
 public class CarDto {
 
-    private final Name name;
-    private final Position position;
+    private final String name;
+    private final int position;
 
     private CarDto(Name name, Position position) {
-        this.name = name;
-        this.position = position;
+        this.name = name.getValue();
+        this.position = position.getPosition();
     }
 
-    public static CarDto of(Car car) {
+    public static CarDto from(Car car) {
         return new CarDto(car.getName(), car.getPosition());
     }
 
-    public Name getName() {
+    public String getName() {
         return name;
     }
 
-    public Position getPosition() {
+    public int getPosition() {
         return position;
     }
 
