@@ -1,8 +1,6 @@
 package racingcar.domain.dto;
 
 import racingcar.domain.Car;
-import racingcar.domain.Name;
-import racingcar.domain.Position;
 
 import java.util.Objects;
 
@@ -11,13 +9,13 @@ public class CarDto {
     private final String name;
     private final int position;
 
-    private CarDto(Name name, Position position) {
-        this.name = name.getValue();
-        this.position = position.getPosition();
+    private CarDto(String name, int position) {
+        this.name = name;
+        this.position = position;
     }
 
     public static CarDto from(Car car) {
-        return new CarDto(car.getName(), car.getPosition());
+        return new CarDto(car.getName().getValue(), car.getPosition().getPosition());
     }
 
     public String getName() {

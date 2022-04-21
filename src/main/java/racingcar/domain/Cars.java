@@ -2,6 +2,8 @@ package racingcar.domain;
 
 import racingcar.domain.strategy.MoveStrategy;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -11,7 +13,8 @@ public class Cars {
     private final List<Car> cars;
 
     private Cars(List<Car> cars) {
-        this.cars = cars;
+
+        this.cars = new ArrayList<>(cars);
     }
 
     public static Cars from(List<Car> cars) {
@@ -27,6 +30,10 @@ public class Cars {
                 .collect(Collectors.toList());
 
         return from(moveCars);
+    }
+
+    public List<Car> getCars() {
+        return Collections.unmodifiableList(cars);
     }
 
     @Override
