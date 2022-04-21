@@ -27,6 +27,14 @@ public class Names {
         return new Names(names);
     }
 
+    public List<Car> defaultPositionCars() {
+        List<Car> cars = new ArrayList<>();
+        for (Name name : names) {
+            cars.add(Car.from(name, Position.fromWithDefaultPosition()));
+        }
+        return cars;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
