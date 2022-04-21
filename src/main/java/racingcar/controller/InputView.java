@@ -7,23 +7,25 @@ import racingcar.service.dto.GameInformation;
 import racingcar.util.ExceptionMessageUtil;
 
 public class InputView {
-    private final static String NUMBER_PATTERN = "\\d*$";
-    private final static String NUMBER_EXCEPTION_MESSAGE = "입력 값이 숫자가 아닙니다.";
-    private final static String NULL_EXCEPTION_MESSAGE = "입력 값이 없습니다.";
-    private final static String NAMES_NOT_HAVE_COMMA_MESSAGE = "이름 값은 ,로 구분됩니다.";
+    private static final String NUMBER_PATTERN = "\\d*$";
+    private static final String NUMBER_EXCEPTION_MESSAGE = "입력 값이 숫자가 아닙니다.";
+    private static final String NULL_EXCEPTION_MESSAGE = "입력 값이 없습니다.";
+    private static final String NAMES_NOT_HAVE_COMMA_MESSAGE = "이름 값은 ,로 구분됩니다.";
+    private static final String INPUT_USER_NAMES_MESSAGE = "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).";
+    private static final String INPUT_TRY_NUMBER_MESSAGE = "시도할 회수는 몇 회 인가요?";
 
     public GameInformation input() {
         Boolean checkInput = true;
         String names = null;
         String timeStr = null;
         do {
-            System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).");
+            System.out.println(INPUT_USER_NAMES_MESSAGE);
             names = Console.readLine();
             checkInput = isValidName(names);
         } while (checkInput);
 
         do {
-            System.out.println("시도할 회수는 몇 회 인가요?");
+            System.out.println(INPUT_TRY_NUMBER_MESSAGE);
             timeStr = Console.readLine();
             checkInput = isValidTime(timeStr);
         } while (checkInput);
