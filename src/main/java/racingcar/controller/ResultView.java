@@ -9,6 +9,10 @@ import java.util.List;
 
 public class ResultView {
 
+    private static final String OUTPUT_RESULT_MESSAGE = "실행 결과";
+    private static final String PRINT_CAR_FORMAT = "%s : %s";
+    private static final String PRINT_RESULT_FORMAT = "최종 우승자: %s";
+
     private final GameHistoryDto gameHistoryDto;
 
     private ResultView(GameHistoryDto gameHistoryDto) {
@@ -20,14 +24,14 @@ public class ResultView {
     }
 
     public void view() {
-        System.out.println("실행 결과");
+        System.out.println(OUTPUT_RESULT_MESSAGE);
         printHistory();
         printWinner();
     }
 
     private void printWinner() {
         Winners winners = gameHistoryDto.getWinners();
-        System.out.println("최종 우승자: " + getWinnerView(winners));
+        System.out.println(String.format(PRINT_RESULT_FORMAT, "최종 우승자: " + getWinnerView(winners)));
     }
 
     private String getWinnerView(Winners winners) {
@@ -45,7 +49,7 @@ public class ResultView {
     private void printCars(CarsDto carsDto) {
         for (CarDto car : carsDto.getCarDtos()) {
             String positionView = getPositionView(car);
-            System.out.println(car.getName() + " : " + positionView);
+            System.out.println(String.format(PRINT_CAR_FORMAT, car.getName(), positionView));
         }
         System.out.println();
     }
