@@ -9,6 +9,7 @@ import java.util.Objects;
 
 public class Winners {
 
+    private static final String DELIMITER = ",";
     private final Names winners;
 
     private Winners(Names winners) {
@@ -25,7 +26,7 @@ public class Winners {
         for (Name name : names) {
             namesStr.add(name.getValue());
         }
-        return String.join(",", namesStr);
+        return String.join(DELIMITER, namesStr);
     }
 
     @Override

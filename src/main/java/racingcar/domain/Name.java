@@ -7,11 +7,13 @@ import java.util.Objects;
 public class Name {
 
     private static final String NAME_LENGTH_EXCEPTION_MESSAGE = "이름의 길이는 1~5자 입니다.";
+    private static final int MIN_LENGTH = 1;
+    private static final int MAX_LENGTH = 1;
 
     private final String value;
 
     private Name(String value) {
-        if (value.length() < 1 || value.length() > 5) {
+        if (value.length() < MIN_LENGTH || value.length() > MAX_LENGTH) {
             throw new IllegalArgumentException(ExceptionMessageUtil.errorMessage(NAME_LENGTH_EXCEPTION_MESSAGE));
         }
         this.value = value;

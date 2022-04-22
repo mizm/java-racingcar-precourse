@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Position implements Comparable<Position> {
 
-    private final static Integer DEFAULT_POSITION = 0;
-    private final static int STEP = 1;
+    private static final Integer DEFAULT_POSITION = 0;
+    private static final int STEP = 1;
 
     private final Integer position;
 

@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Names {
 
+    private static final String DELIMITER = ",";
     private final List<Name> names = new ArrayList<>();
 
     private Names(List<Name> names) {
@@ -15,7 +16,7 @@ public class Names {
     }
 
     public static Names from(String namesStr) {
-        String[] nameList = namesStr.split(",");
+        String[] nameList = namesStr.split(DELIMITER);
         List<Name> names = new ArrayList<>();
         for (String name : nameList) {
             names.add(Name.from(name));
